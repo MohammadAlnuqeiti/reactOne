@@ -54,11 +54,14 @@
 
 // App component {Parent component}
         class App extends React.Component{
+            state={
+                parent:"app is parent"
+            }
             render(){
                 return(
 
                 <div>
-                    <Header title="Header"/>
+                    <Header title="Header" name={this.state.parent}/>
                     <Content title="Content"/>
                     <Footer title="Footer"/>
                 </div>
@@ -70,11 +73,17 @@
         class Header extends React.Component {
             render(){
                 return(
-                    <header>{this.props.title}</header>
-                    // <header>Header</header>
+                    <header>{this.props.title} and state : {this.props.name}</header>
                 )
             }
         }
+// functionعبارة عن component  بقدر استخدم هاي الطريقة بما انه ال
+        // function Header(props){
+        //     return(
+        //         <header>this is header {props.title}</header>
+        //     )
+
+        // }
         class Content extends React.Component {
             render(){
                 return(
